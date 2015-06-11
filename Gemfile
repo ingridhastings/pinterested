@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 gem 'rails', '4.2.1'
-gem 'pg', '~> 0.18.2'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -16,6 +15,9 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'carrierwave-aws', '~> 0.5.0'
 gem 'rails_autolink', '~> 1.1.6'
 gem 'mini_magick', '~> 4.2.7'
+gem 'devise', '~> 3.5.1'
+gem 'pg', '~> 0.18.2'
+
 
 group :development, :test do
   gem 'sqlite3'
