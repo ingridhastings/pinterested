@@ -17,7 +17,8 @@ gem 'rails_autolink', '~> 1.1.6'
 gem 'mini_magick', '~> 4.2.7'
 gem 'devise', '~> 3.5.1'
 gem 'pg', '~> 0.18.2'
-
+gem 'dotenv-rails', '~> 2.0.1'
+gem 'faker', '~> 1.4.3'
 
 group :development, :test do
   gem 'sqlite3'
