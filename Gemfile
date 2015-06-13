@@ -20,6 +20,7 @@ gem 'pg', '~> 0.18.2'
 gem 'dotenv-rails', '~> 2.0.1'
 gem 'faker', '~> 1.4.3'
 gem 'paperclip', '~> 4.2.2'
+gem 'aws-sdk', '~> 1.58'
 
 group :development, :test do
   gem 'sqlite3'
