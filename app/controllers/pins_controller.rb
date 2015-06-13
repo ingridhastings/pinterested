@@ -1,27 +1,27 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
-
-# authenticates a user for every page of the app except index and show
   before_action :authenticate_user!, except: [:index, :show]
-
-# makes sure only the correct user can edit, update or destroy a pin
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @pins = Pin.all
+    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
+
 
   def show
   end
+
 
   def new
     @pin = current_user.pins.build
   end
 
+
   def edit
   end
+
 
   def create
     @pin = current_user.pins.build(pin_params)
@@ -40,7 +40,6 @@ class PinsController < ApplicationController
         ender :edit
       end
   end
-
 
 
   def destroy
@@ -62,4 +61,5 @@ class PinsController < ApplicationController
       @pin = current_user.pins.find_by(id:params[:id])
       redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
     end
+
 end
