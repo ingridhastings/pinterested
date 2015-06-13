@@ -55,11 +55,9 @@ class PinsController < ApplicationController
     end
 
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
 
-# current_user is a Devise helper that references who the current logged in user is
-# lets the db know that a specific pin belongs to a specific user
     def correct_user
       @pin = current_user.pins.find_by(id:params[:id])
       redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?

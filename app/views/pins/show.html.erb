@@ -1,15 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+  <%= image_tag @pin.image.url(:medium) %><br/>
   <strong>Description:</strong>
   <%= @pin.description %>
-</p>
+  <br/>
 
-<!-- if the user that created the pins is the same as the current user -->
-<!-- show the edit links, otherwise don't -->
-<% if @pin.user == current_user %>
-<!-- called @pin to access the database table -->
-
-<%= link_to 'Edit', edit_pin_path(@pin) %>
-<% end %>
-<%= link_to 'Back', pins_path %>
+  <%= link_to 'Edit', edit_pin_path(@pin) %> |
+  <%= link_to 'Back', pins_path %>

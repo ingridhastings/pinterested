@@ -19,6 +19,7 @@ gem 'devise', '~> 3.5.1'
 gem 'pg', '~> 0.18.2'
 gem 'dotenv-rails', '~> 2.0.1'
 gem 'faker', '~> 1.4.3'
+gem 'paperclip', '~> 4.2.2'
 
 group :development, :test do
   gem 'sqlite3'

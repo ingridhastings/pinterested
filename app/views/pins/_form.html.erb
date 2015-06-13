@@ -1,5 +1,7 @@
-<%= simple_form_for(@pin) do |f| %>
-  <%= f.error_notification %>
+<!-- tells the form to allow multipart stuff (images) -->
+
+<%= simple_form_for @pin, html: {
+    multipart: true } do |f| %>
 
   <div class="form-inputs">
     <%= f.input :description %>
@@ -7,5 +9,10 @@
 
   <div class="form-actions">
     <%= f.button :submit %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 <% end %>
